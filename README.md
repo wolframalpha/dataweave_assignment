@@ -1,4 +1,6 @@
-# dataweave_assignment
+# Dataweave Assignment
+
+Install the requirements from `./requirements.txt` file
 
 ### 1. Prediction on files:
 **filename**: `prediction_on_file.py`  
