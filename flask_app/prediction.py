@@ -15,4 +15,3 @@ def get_single_prediction(text):
     X_test = tfidf.transform(X_test)
     y_pred = model.predict(X_test)
     return y_pred[0]
-
