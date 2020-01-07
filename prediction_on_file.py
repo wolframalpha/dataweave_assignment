@@ -1,6 +1,6 @@
-retrain_model = True
 import pickle
 import re
+import argparse
 
 model, tfidf = pickle.load(open('data/model_trainedv2.pic', 'rb'))
 
@@ -25,8 +25,6 @@ def get_predictions(texts):
 input_filename = "input_test_sample.txt"
 output_filename = "output_test_sample.txt"
 
-
-import argparse
 
 parser = argparse.ArgumentParser(description='prediction args')
 parser.add_argument("--ifp", default=input_filename, help="input file path")
