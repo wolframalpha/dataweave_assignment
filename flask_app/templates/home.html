@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+	<header>
+		<div class="container">
+		<h2>A fruit or a company ?</h2>
+
+	</div>
+	</header>
+	<div class="ml-container">
+		<form action="{{ url_for('predict')}}" method="POST">
+		<p>Enter Your text here</p>
+		<!-- <input type="text" name="comment"/> -->
+		<textarea name="message" rows="20" cols="60"></textarea>
+		<br/>
+		<input type="submit" class="btn-info" value="predict">
+
+	</form>
+
+	</div>
+  	{% if prediction %}
+
+	  <h1>It's a {{ prediction }} </h1>
+	  	{% if prediction == "computer-company" %}
+		<img src="https://image.flaticon.com/icons/png/512/23/23656.png" style="width: 20vh; height: 20vh">
+
+		{% elif prediction == "fruit" %}
+		<img src="https://thumbs.dreamstime.com/b/vectored-illustration-red-apple-apple-realistic-illustration-86555898.jpg"  style="width: 20vh; height: 20vh">
+		{% endif %}
+	{% endif %}
+
+</body>
+</html>
